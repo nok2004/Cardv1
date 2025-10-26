@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCheck Maroc | Contact</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:'Inter', sans-serif;
+      background:#0a0f1a;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:20px;
+      color:white;
+    }
+
+    .card {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      background:#101624;
+      border-radius:24px;
+      overflow:hidden;
+      max-width:900px;
+      width:100%;
+      box-shadow:0 0 40px rgba(0,174,239,0.3);
+      animation:fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    /* Colonne gauche */
+    .left {
+      background:#0a0f1a;
+      color:white;
+      padding:50px 30px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .logo {
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:20px;
+      border:4px solid #00aeef;
+      box-shadow:0 0 20px rgba(0,174,239,0.4);
+    }
+
+    .company-name {
+      font-size:1.8rem;
+      font-weight:700;
+      color:#00aeef;
+      margin-bottom:10px;
+    }
+
+    .slogan {
+      font-weight:400;
+      margin-bottom:25px;
+      font-size:1rem;
+    }
+
+    .socials {
+      display:flex;
+      gap:15px;
+      margin-top:15px;
+    }
+    .socials a {
+      color:white;
+      font-size:1.4rem;
+      transition:0.3s;
+    }
+    .socials a:hover {
+      color:#00aeef;
+      transform:scale(1.2);
+    }
+
+    /* Colonne droite */
+    .right {
+      background:#0a0f1a;
+      padding:50px 40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+    }
+
+    .right h2 {
+      color:#00aeef;
+      margin-bottom:20px;
+      font-size:1.3rem;
+      border-left:4px solid white;
+      padding-left:10px;
+    }
+
+    .contact-info {
+      margin-bottom:25px;
+    }
+    .info-item {
+      display:flex;
+      align-items:center;
+      margin-bottom:15px;
+    }
+    .info-item i {
+      color:#00aeef;
+      width:28px;
+      font-size:1.2rem;
+      margin-right:10px;
+    }
+    .info-item span {font-size:0.95rem; color:white;}
+
+    .btn {
+      background:#00aeef;
+      color:#0a0f1a;
+      font-weight:600;
+      border:none;
+      border-radius:10px;
+      padding:12px 20px;
+      cursor:pointer;
+      text-decoration:none;
+      transition:all 0.3s ease;
+      margin-bottom:15px;
+      width:100%;
+      max-width:250px;
+      text-align:center;
+    }
+    .btn:hover {
+      background:white;
+      color:#00aeef;
+      box-shadow:0 0 15px rgba(0,174,239,0.5);
+      transform:translateY(-2px);
+    }
+
+    #contactForm {
+      display:none;
+      flex-direction:column;
+      gap:15px;
+      margin-top:15px;
+    }
+
+    input, textarea {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.15);
+      color:white;
+      border-radius:8px;
+      padding:12px 15px;
+      font-size:0.95rem;
+      outline:none;
+      transition:0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color:#00aeef;
+      box-shadow:0 0 15px rgba(0,174,239,0.3);
+    }
+
+    textarea {resize:none; height:120px;}
+
+    .submit-btn {
+      background:#00aeef;
+      color:#0a0f1a;
+      font-weight:600;
+      border:none;
+      padding:12px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .submit-btn:hover {
+      background:white;
+      color:#00aeef;
+      box-shadow:0 0 15px rgba(0,174,239,0.5);
+      transform:translateY(-2px);
+    }
+
+    .success {
+      margin-top:10px;
+      color:#00aeef;
+      display:none;
+      font-weight:500;
+    }
+    .buttons {
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap; 
+}
+
+.buttons .btn {
+  flex:1;            /* chaque bouton prend la même largeur */
+  font-size:0.95rem; /* même taille de texte pour les deux */
+  max-width:none;     /* enlève limite précédente */
+  text-align:center;
+  padding:12px;       /* même padding */
+}
+
+
+    @media(max-width:768px){
+      .card {grid-template-columns:1fr;}
+      .left {padding:30px;}
+      .right {padding:30px;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- Colonne gauche -->
+    <div class="left">
+      <img src="votre-logo.png" alt="Logo AutoCheck" class="logo">
+      <div class="company-name">AutoCheck</div>
+      <div class="slogan">Dépannage de toutes voitures</div>
+
+      <div class="socials">
+        <a href="https://web.facebook.com/profile.php?id=61582486305086&rdid=kYXNAogfJqUVQI8Z&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1GbRKitnWF%2F%3F_rdc%3D1%26_rdr#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/auto_check2025?igsh=d3V3OXU2MWRobzF1&utm_source=qr"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/212669580965?text=Bonjour%20AutoCheck%2C%20j%E2%80%99aimerais%20avoir%20plus%20d%E2%80%99informations."><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <!-- Colonne droite -->
+    <div class="right">
+      <h2>Coordonnées</h2>
+      <div class="contact-info">
+        <div class="info-item"><i class="fa-solid fa-phone"></i><span>+212 6 69 58 09 65</span></div>
+        <div class="info-item"><i class="fa-solid fa-envelope"></i><span>autocheckdumaroc@gmail.com</span></div>
+        <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>Meknes, Maroc</span></div>
+        <div class="info-item"><i class="fa-solid fa-globe"></i><span>www.autocheck.com</span></div>
+      </div>
+<!-- Boutons côte à côte -->
+<div class="buttons">
+  <a href="autocheck_contact.vcf" class="btn" download><i class="fa-solid fa-address-card"></i> Ajouter à mes contacts</a>
+  <a href="https://form.jotform.com/252964255451057" class="btn" id="showForm"><i class="fa-solid fa-envelope-open-text"></i> Contactez-nous</a>
+</div>
+
+
+  <script>
+    document.getElementById('showForm').addEventListener('click', ()=>{
+      const formDiv = document.getElementById('contactForm');
+      formDiv.style.display = formDiv.style.display === 'none' ? 'flex' : 'none';
+    });
+
+    function showSuccess(e){
+      e.preventDefault();
+      const form = e.target;
+      form.style.display = "none";
+      document.querySelector('.success').style.display = "block";
+      fetch(form.action, { method: "POST", body: new FormData(form) });
+    }
+  </script>
+</body>
+</html>
